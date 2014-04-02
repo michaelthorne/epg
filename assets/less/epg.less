@@ -15,7 +15,7 @@
  */
 
 .carousel {
-    background-color: @colour-silver;
+    background-color: @colour-grey;
     padding-top: 6em;
     padding-bottom: 6em;
 }
@@ -25,6 +25,25 @@
  */
 
 .epg {
+    background-color: @colour-silver;
+
+    /**
+     * Header
+     */
+
+    .epg-header {
+        overflow: hidden;
+
+        .title {
+            float: left;
+            margin: 0;
+        }
+
+        .form {
+            float: right;
+            padding-top: 0.5em;
+        }
+    }
 
     /**
      * Navigation
