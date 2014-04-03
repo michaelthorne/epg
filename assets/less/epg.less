@@ -8,6 +8,7 @@
 
 .epg {
     background-color: @colour-silver;
+    overflow: hidden;
 
     /**
      * Header
@@ -52,6 +53,7 @@
         overflow: hidden;
         padding-top: 1em;
         padding-bottom: 1em;
+        width: 100%;
 
         /**
          * Form
@@ -77,9 +79,12 @@
                 margin-top: 0;
             }
 
-            /* List */
+            /**
+             * List
+             */
+
             .list-days {
-                background-color: @colour-silver;
+                background-color: @colour-white;
                 border: 1px solid @colour-grey-dark;
                 .border-radius(3px);
                 list-style: none;
@@ -87,7 +92,10 @@
                 overflow: hidden;
                 padding: 0;
 
-                /* Item */
+                /**
+                 * Item
+                 */
+
                 li {
                     border-bottom: 1px solid @colour-grey-dark;
 
@@ -98,7 +106,15 @@
                         height: 2.813em; /* 45 / 16 */
                     }
 
-                    /* Today */
+                    &:last-child {
+                        border-right: 0;
+                        border-bottom: 0;
+                    }
+
+                    /**
+                     * Today
+                     */
+
                     &.today {
                         background-color: @colour-grey-dark;
 
@@ -114,12 +130,10 @@
                         }
                     }
 
-                    &:last-child {
-                        border-right: 0;
-                        border-bottom: 0;
-                    }
+                    /**
+                     * Anchor
+                     */
 
-                    /* Anchor */
                     a {
                         color: @colour-grey-dark;
                         display: block;
@@ -130,6 +144,12 @@
                         text-align: center;
                         text-decoration: none;
                         .transition(all 0.25s);
+
+                        &:focus,
+                        &:hover {
+                            background-color: @colour-grey;
+                            color: @colour-white-dark;
+                        }
 
                         /* Date */
                         .date {
@@ -144,15 +164,163 @@
                                 padding: 0;
                             }
                         }
-
-                        &:focus,
-                        &:hover {
-                            background-color: @colour-blue;
-                            color: @colour-white-dark;
-                        }
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * Grid
+     */
+
+    .epg-grid {
+        background-color: @colour-silver;
+        overflow-x: visible;
+        overflow-y: hidden;
+    }
+
+    /**
+     * Timeline
+     */
+
+    .epg-timeline {
+        background-color: @colour-grey-dark;
+        width: 6000px;
+
+        /**
+         * List
+         */
+
+        .list {
+            list-style: none;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+
+            /**
+             * Item
+             */
+
+            li {
+                color: @colour-white-dark;
+                float: left;
+                font-weight: bold;
+                padding: 0.5em 0;
+                text-align: center;
+                width: 250px;
+            }
+        }
+    }
+
+    /**
+     * Channels
+     */
+
+    .epg-channels {
+        background-color: @colour-grey;
+        left: 0;
+        position: absolute;
+        width: 120px;
+
+        /**
+         * List
+         */
+
+        .list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            /**
+             * Item
+             */
+
+            li {
+                border-bottom: 1px solid @colour-grey-dark;
+                height: 130px;
+                padding-top: 1em;
+                width: 100%;
+
+                &:first-child {
+                    border-top: 1px solid transparent;
+                }
+
+                /* Anchor */
+                a {
+                    display: block;
+
+                    /* Image */
+                    img {
+                        display: block;
+                        margin: 0 auto 0.25em auto;
+                    }
+                }
+
+                /* Title */
+                .title {
+                    color: @colour-white-dark;
+                    display: block;
+                    font-size: 0.875em; /* 14 / 16 */
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    /**
+     * Programmes
+     */
+
+    .epg-programmes {
+
+        /**
+         * List
+         */
+
+        .list {
+            list-style: none;
+            margin: 0 0 0 120px;
+            overflow: hidden;
+            padding: 0;
+            width: 6000px;
+
+            /**
+             * Item
+             */
+
+            li {
+                float: left;
+                height: 130px;
+                overflow: hidden;
+
+                /* Programme */
+                .programme {
+
+                    &:last-of-type {
+                        border-right: 0;
+                    }
+                }
+
+                /* Time */
+                .time {
+                    display: block;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        /**
+         * Programme
+         */
+
+        .programme {
+            border-right: 1px solid @colour-grey-dark;
+            border-bottom: 1px solid @colour-grey;
+            float: left;
+            height: 100%;
+            padding-left: 1em;
+            width: 250px;
         }
     }
 }
