@@ -23,30 +23,48 @@
     <![endif]-->
 
     <header class="header header-primary" role="banner">
-        <h1>Header</h1>
+        <div class="wrapper">
+            <a href="index.html" class="logo"><img src="http://placehold.it/136x40" alt="Logo" /></a>
+        </div><!-- // Wrapper -->
     </header>
-
-    <div class="carousel">
-        <h2>Carousel</h2>
-    </div>
 
     <main role="main">
         <div class="epg">
             <div class="epg-header">
-                <h1 class="title">EPG</h1>
-                <form class="form form-epg">
-                    <label>
-                        <input id="search" name="search" placeholder="Search&hellip;" />
-                    </label>
-                    <button type="submit"><span class="fa fa-search" aria-hidden="true"></span></button>
-                </form>
-            </div>
-            <div class="epg-nav">
-                <form>
+                <div class="wrapper">
+                    <h1 class="title">EPG</h1>
+                    <form class="form form-epg">
+                        <label for="search">
+                            <input id="search" name="search" class="input" placeholder="Search&hellip;" />
+                        </label>
+                        <button type="submit" class="btn"><span class="fa fa-search" aria-hidden="true"></span></button>
+                    </form>
+                </div><!-- // Wrapper -->
+            </div><!-- // Header -->
 
-                </form>
-            </div>
-        </div>
+            <div class="epg-nav">
+                <div class="wrapper">
+                    <form class="form form-horizontal">
+                        <label for="package" class="label">
+                            <select id="package" name="package" class="input">
+                                <option value="" selected="selected">All Packages</option>
+                                <option value="package-1">Package 1</option>
+                                <option value="package-2">Package 2</option>
+                                <option value="package-3">Package 3</option>
+                            </select>
+                        </label>
+                        <label for="sort" class="label">
+                            <select id="sort" name="package" class="input">
+                                <option value="" selected="selected">Popular</option>
+                                <option value="favourites">My Favourites</option>
+                                <option value="alphabetical">Alphabetical</option>
+                                <option value="numerical">Numerical</option>
+                            </select>
+                        </label>
+                    </form>
+                </div><!-- // Wrapper -->
+            </div><!-- // Nav -->
+        </div><!-- // EPG -->
     </main>
 
     <script src="assets/js/vendor/jquery.js"></script>
