@@ -29,7 +29,7 @@
     </header>
 
     <main role="main">
-        <div class="epg">
+        <div class="epg" data-component="epg">
             <div class="epg-header">
                 <div class="wrapper">
                     <h1 class="title">EPG</h1>
@@ -78,7 +78,7 @@
                 </div><!-- // Wrapper -->
             </div><!-- // Nav -->
 
-            <div class="epg-grid">
+            <div class="epg-grid" data-draggable="true">
                 <div class="epg-timeline">
                     <ol class="list list-timeline">
                         <li>00:00</li>
@@ -1037,9 +1037,17 @@
                 </div>
             </div><!-- // Grid -->
         </div><!-- // EPG -->
+
+        <footer class="footer footer-primary" role="contentinfo">
+            <div class="wrapper">
+                <h2>Footer</h2>
+            </div><!-- // Wrapper -->
+        </footer>
     </main>
 
     <script src="assets/js/vendor/jquery.js"></script>
+    <script src="assets/js/plugins.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>main.init();</script>
 </body>
 </html>
