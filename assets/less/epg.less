@@ -18,7 +18,10 @@
         padding-top: 1em;
         padding-bottom: 1em;
 
-        /* Title */
+        /**
+         * Title
+         */
+
         .title {
             margin: 0;
 
@@ -27,7 +30,10 @@
             }
         }
 
-        /* Form */
+        /**
+         * Form
+         */
+
         .form {
             padding-top: 0.4em;
 
@@ -43,7 +49,93 @@
 
     .epg-nav {
         background-color: @colour-white-dark;
+        overflow: hidden;
         padding-top: 1em;
         padding-bottom: 1em;
+
+        /**
+         * Form
+         */
+
+        .form {
+
+            @media all and (min-width: @bp-small) {
+                float: left;
+                padding-top: 0.25em;
+            }
+        }
+
+        /**
+         * Days
+         */
+
+        .epg-nav-days {
+
+            @media all and (min-width: @bp-small) {
+                float: right;
+            }
+
+            /* List */
+            .list-days {
+                border: 1px solid @colour-grey-dark;
+                .border-radius(3px);
+                list-style: none;
+                margin: 0;
+                overflow: hidden;
+                padding: 0;
+
+                /* Item */
+                li {
+                    border-right: 1px solid @colour-grey-dark;
+                    float: left;
+                    height: 2.813em; /* 45 / 16 */
+
+                    /* Today */
+                    &.today {
+                        background-color: @colour-grey-dark;
+
+                        /* Anchor */
+                        a {
+                            color: @colour-white-dark;
+                            line-height: 3.25;
+
+                            &:focus,
+                            &:hover {
+                                background-color: @colour-grey-dark;
+                            }
+                        }
+                    }
+
+                    &:last-child {
+                        border-right: 0;
+                    }
+
+                    /* Anchor */
+                    a {
+                        color: @colour-grey-dark;
+                        display: block;
+                        font-size: 0.875em; /* 14 / 16 */
+                        font-weight: bold;
+                        height: 100%;
+                        padding: 0 0.5em;
+                        text-align: center;
+                        text-decoration: none;
+                        .transition(all 0.25s);
+
+                        /* Date */
+                        .date {
+                            display: block;
+                            font-weight: normal;
+                        }
+
+                        &:focus,
+                        &:hover {
+                            background-color: @colour-blue;
+                            color: @colour-white-dark;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

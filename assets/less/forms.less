@@ -40,10 +40,20 @@ textarea {
         .label {
             float: left;
             width: 80%;
+
+            /* Input */
+            .input {
+                .border-top-right-radius(0);
+                .border-bottom-right-radius(0);
+            }
         }
 
         /* Button */
         .btn {
+            .border-top-left-radius(0);
+            .border-bottom-left-radius(0);
+            height: 2.313em;
+            padding: 0.25em 0.5em;
             width: 20%;
         }
     }
@@ -106,18 +116,7 @@ textarea {
 
 .input {
     border: 1px solid @colour-grey;
+    .border-radius(3px);
     padding: 0.5em;
     width: 100%;
-}
-
-
-
-
-
-/* ==========================================================================
-   $BUTTONS
-   ========================================================================== */
-
-.btn {
-    padding: 0.25em 0.5em;
 }
