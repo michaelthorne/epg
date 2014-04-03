@@ -70,13 +70,16 @@
          */
 
         .epg-nav-days {
+            margin-top: 2em;
 
             @media all and (min-width: @bp-small) {
                 float: right;
+                margin-top: 0;
             }
 
             /* List */
             .list-days {
+                background-color: @colour-silver;
                 border: 1px solid @colour-grey-dark;
                 .border-radius(3px);
                 list-style: none;
@@ -86,10 +89,14 @@
 
                 /* Item */
                 li {
-                    background-color: @colour-silver;
-                    border-right: 1px solid @colour-grey-dark;
-                    float: left;
-                    height: 2.813em; /* 45 / 16 */
+                    border-bottom: 1px solid @colour-grey-dark;
+
+                    @media all and (min-width: @bp-small) {
+                        border-right: 1px solid @colour-grey-dark;
+                        border-bottom: 0;
+                        float: left;
+                        height: 2.813em; /* 45 / 16 */
+                    }
 
                     /* Today */
                     &.today {
@@ -109,6 +116,7 @@
 
                     &:last-child {
                         border-right: 0;
+                        border-bottom: 0;
                     }
 
                     /* Anchor */
@@ -118,15 +126,23 @@
                         font-size: 0.875em; /* 14 / 16 */
                         font-weight: bold;
                         height: 100%;
-                        padding: 0 0.5em;
+                        padding: 0 0.75em;
                         text-align: center;
                         text-decoration: none;
                         .transition(all 0.25s);
 
                         /* Date */
                         .date {
-                            display: block;
+                            display: inline-block;
                             font-weight: normal;
+                            margin-left: 0.25em;
+                            padding: 0.5em 0;
+
+                            @media all and (min-width: @bp-small) {
+                                display: block;
+                                margin-left: 0;
+                                padding: 0;
+                            }
                         }
 
                         &:focus,
