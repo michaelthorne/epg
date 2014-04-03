@@ -31,19 +31,68 @@ textarea {
 .form {
 
     /**
+     * Search
+     */
+
+    &.form-search {
+
+        /* Label */
+        .label {
+            float: left;
+            width: 80%;
+        }
+
+        /* Button */
+        .btn {
+            width: 20%;
+        }
+    }
+
+    /**
      * Horizontal
      */
 
     &.form-horizontal {
+        overflow: hidden;
 
         /* Label */
         .label {
-            margin-left: 1em;
+            margin-bottom: 0.5em;
+
+            @media all and (min-width: @bp-small) {
+                margin-bottom: 0;
+                margin-left: 1em;
+                float: left;
+            }
 
             &:first-child {
-                margin-left: 0;
+
+                @media all and (min-width: @bp-small) {
+                    margin-left: 0;
+                }
+            }
+
+            &:last-child {
+                margin-bottom: 0;
             }
         }
+    }
+}
+
+
+
+
+
+/* ==========================================================================
+   $LABEL
+   ========================================================================== */
+
+.label {
+    display: inline-block;
+    width: 100%;
+
+    @media all and (min-width: @bp-small) {
+        width: auto;
     }
 }
 
@@ -58,6 +107,7 @@ textarea {
 .input {
     border: 1px solid @colour-grey;
     padding: 0.5em;
+    width: 100%;
 }
 
 

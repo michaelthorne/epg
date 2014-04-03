@@ -18,14 +18,22 @@
         padding-top: 1em;
         padding-bottom: 1em;
 
+        /* Title */
         .title {
-            float: left;
             margin: 0;
+
+            @media all and (min-width: @bp-small) {
+                float: left;
+            }
         }
 
+        /* Form */
         .form {
-            float: right;
             padding-top: 0.4em;
+
+            @media all and (min-width: @bp-small) {
+                float: right;
+            }
         }
     }
 
