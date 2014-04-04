@@ -33,7 +33,7 @@ var components = {
 
             if (draggable.length > 0)
             {
-                //draggable.kinetic();
+                draggable.kinetic();
             }
         }
     }

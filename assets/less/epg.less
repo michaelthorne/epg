@@ -61,7 +61,7 @@
 
         .form {
 
-            @media all and (min-width: @bp-small) {
+            @media all and (min-width: @bp-medium) {
                 float: left;
                 padding-top: 0.25em;
             }
@@ -72,9 +72,10 @@
          */
 
         .epg-nav-days {
-            margin-top: 0.5em;
+            margin-top: 1em;
+            overflow: hidden;
 
-            @media all and (min-width: @bp-small) {
+            @media all and (min-width: @bp-medium) {
                 float: right;
                 margin-top: 0;
             }
@@ -87,10 +88,17 @@
                 background-color: @colour-white;
                 border: 1px solid @colour-grey-dark;
                 .border-radius(3px);
+                display: inline-block;
+                float: left;
                 list-style: none;
                 margin: 0;
                 overflow: hidden;
                 padding: 0;
+                width: 100%;
+
+                @media all and (min-width: @bp-small) {
+                    width: auto;
+                }
 
                 /**
                  * Item
@@ -171,6 +179,53 @@
     }
 
     /**
+     * Contents
+     */
+
+    .epg-contents {
+        position: relative;
+
+        &:focus,
+        &:hover {
+
+            /* Control */
+            .control {
+                .opacity(1);
+            }
+        }
+
+        /**
+         * Controls
+         */
+
+        .control {
+            background-color: rgba(0,0,0, 0.5);
+            color: @colour-white;
+            font-size: 1.5em;
+            height: 100%;
+            .opacity(0);
+            padding-top: 1em;
+            position: absolute;
+            text-align: center;
+            text-decoration: none;
+            top: 41px;
+            .transition(opacity 0.25s);
+            width: 50px;
+            z-index: 4;
+
+            /* Previous */
+            &.control-prev {
+                left: 90px;
+            }
+
+            /* Next */
+            &.control-next {
+                right: 0;
+            }
+        }
+    }
+
+    /**
      * Grid
      */
 
@@ -187,7 +242,7 @@
     .epg-timeline {
         background-color: @colour-grey-dark;
         padding-left: 90px;
-        width: 6090px;
+        width: 5850px;
 
         /**
          * List
@@ -209,7 +264,7 @@
                 float: left;
                 font-weight: bold;
                 padding: 0.5em 0 0.5em 0.75em;
-                width: 250px;
+                width: 240px;
             }
         }
     }
@@ -220,9 +275,11 @@
 
     .epg-channels {
         background-color: @colour-grey;
+        .box-shadow(5px 0 15px -10px @colour-grey-dark);
         left: 0;
         position: absolute;
         width: 90px;
+        z-index: 4;
 
         /**
          * List
@@ -274,6 +331,22 @@
      */
 
     .epg-programmes {
+        margin-left: 90px;
+        position: relative;
+
+        /**
+         * Marker
+         */
+
+        .epg-marker {
+            background-color: @colour-blue;
+            .box-shadow(0 0 5px @colour-grey);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 3px;
+            z-index: 3;
+        }
 
         /**
          * List
@@ -281,10 +354,10 @@
 
         .list {
             list-style: none;
-            margin: 0 0 0 90px;
+            margin: 0;
             overflow: hidden;
             padding: 0;
-            width: 6000px;
+            width: 5760px;
 
             /**
              * Item
@@ -314,12 +387,13 @@
             border-bottom: 1px solid @colour-grey;
             float: left;
             height: 100%;
-            width: 250px;
+            width: 240px;
 
             /* Anchor */
             a {
                 color: @colour-grey-dark;
                 display: block;
+                height: 100%;
                 padding: 0.75em;
                 text-decoration: none;
                 .transition(background-color 0.25s);
