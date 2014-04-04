@@ -11,6 +11,7 @@ var main = {
          */
 
         components.epg();
+        components.days();
     }
 };
 
@@ -91,6 +92,42 @@ var components = {
                     scrollLeft: epg_grid_scroll + distance
                 }, 500);
             }
+        }
+    },
+
+    /* Days
+       ========================================================================== */
+
+    days: function ()
+    {
+        var component_days = $('[data-component="days"]');
+
+        if (component_days.length > 0)
+        {
+            var toggle = $('[data-action="toggle"]', component_days);
+            var toggle_icon = $('.icon', toggle);
+            var icon_down = 'fa-angle-down';
+            var icon_up = 'fa-angle-up';
+
+            toggle.on('click', function (e)
+            {
+                e.preventDefault();
+
+                // Toggle the display of all other items
+                $('li[class!="today"]', component_days).toggle();
+
+                // Toggle the class
+                if (toggle_icon.hasClass(icon_down))
+                {
+                    toggle_icon.removeClass(icon_down);
+                    toggle_icon.addClass(icon_up);
+                }
+                else
+                {
+                    toggle_icon.removeClass(icon_up);
+                    toggle_icon.addClass(icon_down);
+                }
+            });
         }
     }
 };

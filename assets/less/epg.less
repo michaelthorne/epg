@@ -87,6 +87,7 @@
             .list-days {
                 background-color: @colour-white;
                 border: 1px solid @colour-grey-dark;
+                border-top: 0;
                 .border-radius(3px);
                 display: inline-block;
                 float: left;
@@ -105,18 +106,23 @@
                  */
 
                 li {
-                    border-bottom: 1px solid @colour-grey-dark;
+                    border-top: 1px solid @colour-grey-dark;
+                    display: none;
 
                     @media all and (min-width: @bp-small) {
                         border-right: 1px solid @colour-grey-dark;
                         border-bottom: 0;
+                        display: block;
                         float: left;
                         height: 2.813em; /* 45 / 16 */
                     }
 
+                    &:first-child {
+                        border-top: 0;
+                    }
+
                     &:last-child {
                         border-right: 0;
-                        border-bottom: 0;
                     }
 
                     /**
@@ -125,15 +131,36 @@
 
                     &.today {
                         background-color: @colour-grey-dark;
+                        border-top: 1px solid @colour-grey-dark;
+                        display: block;
+                        position: relative;
 
                         /* Anchor */
                         a {
                             color: @colour-white-dark;
                             line-height: 3.25;
+                            position: relative;
 
                             &:focus,
                             &:hover {
                                 background-color: @colour-grey-dark;
+                            }
+
+                            /* Toggle */
+                            &.toggle {
+                                font-size: 1.5em; /* 20 / 16 */
+                                line-height: 1.8;
+                                height: 100%;
+                                padding-right: 0.5em;
+                                padding-left: 0.5em;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                vertical-align: middle;
+
+                                @media all and (min-width: @bp-small) {
+                                    display: none;
+                                }
                             }
                         }
                     }
@@ -252,8 +279,12 @@
 
     .epg-timeline {
         background-color: @colour-grey-dark;
-        padding-left: 90px;
+        padding-left: 75px;
         width: 5850px;
+
+        @media all and (min-width: @bp-small) {
+            padding-left: 90px;
+        }
 
         /**
          * List
@@ -289,8 +320,12 @@
         .box-shadow(5px 0 15px -10px @colour-grey-dark);
         left: 0;
         position: absolute;
-        width: 90px;
+        width: 75px;
         z-index: 4;
+
+        @media all and (min-width: @bp-small) {
+            width: 90px;
+        }
 
         /**
          * List
@@ -342,8 +377,12 @@
      */
 
     .epg-programmes {
-        margin-left: 90px;
+        margin-left: 75px;
         position: relative;
+
+        @media all and (min-width: @bp-small) {
+            margin-left: 90px;
+        }
 
         /**
          * Marker
