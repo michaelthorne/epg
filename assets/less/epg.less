@@ -313,15 +313,43 @@
             border-right: 1px solid @colour-grey-dark;
             border-bottom: 1px solid @colour-grey;
             float: left;
-            font-size: 0.875em; /* 14 / 16 */
             height: 100%;
-            padding-top: 0.8em;
-            padding-left: 1em;
             width: 250px;
+
+            /* Anchor */
+            a {
+                color: @colour-grey-dark;
+                display: block;
+                padding: 0.75em;
+                text-decoration: none;
+                .transition(background-color 0.25s);
+
+                &:focus,
+                &:hover {
+                    background-color: @colour-white-dark;
+                }
+            }
+
+            /* Title */
+            .title {
+                font-size: 0.875em; /* 14 / 16 */
+                line-height: 1.2;
+                margin-top: 0;
+                margin-bottom: 0.25em;
+            }
+
+            /* Description */
+            .description {
+                font-size: 0.875em; /* 14 / 16 */
+                line-height: 1.2;
+                margin-top: 0;
+                margin-bottom: 0.25em;
+            }
 
             /* Time */
             .time {
-                display: block;
+                display: inline-block;
+                font-size: 0.875em; /* 14 / 16 */
                 font-weight: bold;
             }
         }
