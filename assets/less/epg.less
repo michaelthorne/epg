@@ -185,33 +185,37 @@
     .epg-contents {
         position: relative;
 
-        &:focus,
-        &:hover {
-
-            /* Control */
-            .control {
-                .opacity(1);
-            }
-        }
-
         /**
          * Controls
          */
 
         .control {
-            background-color: rgba(0,0,0, 0.5);
             color: @colour-white;
+            display: none;
             font-size: 1.5em;
             height: 100%;
-            .opacity(0);
             padding-top: 0.75em;
             padding-left: 0.75em;
             position: absolute;
             text-decoration: none;
             top: 41px;
-            .transition(opacity 0.25s);
+            .transition(background-color 0.25s);
             width: 50px;
             z-index: 4;
+
+            @media all and (min-width: @bp-small) {
+                display: block;
+            }
+
+            &:focus,
+            &:hover {
+                background-color: rgba(0,0,0, 0.4);
+
+                /* Icon */
+                .icon {
+                    .opacity(1);
+                }
+            }
 
             /* Previous */
             &.control-prev {
@@ -225,7 +229,9 @@
 
             /* Icon */
             .icon {
+                .opacity(0);
                 position: fixed;
+                .transition(opacity 0.25s);
             }
         }
     }
