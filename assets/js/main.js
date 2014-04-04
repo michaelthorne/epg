@@ -29,12 +29,22 @@ var components = {
 
         if (component_epg.length > 0)
         {
+            /*
+             * Draggable
+             */
+
             var draggable = $('[data-draggable="true"]', component_epg);
 
             if (draggable.length > 0)
             {
                 draggable.kinetic();
             }
+
+            /*
+             * Initialize
+             */
+
+            var now = component_epg.data('now');
         }
     }
 };
