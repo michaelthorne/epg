@@ -79,19 +79,19 @@ var components = {
             {
                 draggable.kinetic();
             }
+        }
 
-            /**
-             * Scroll the EPG grid the specified distance
-             */
+        /**
+         * Scroll the EPG grid the specified distance
+         */
 
-            function scrollEPG(distance)
-            {
-                epg_grid_scroll = epg_grid.scrollLeft();
+        function scrollEPG(distance)
+        {
+            epg_grid_scroll = epg_grid.scrollLeft();
 
-                epg_grid.stop(true, true).animate({
-                    scrollLeft: epg_grid_scroll + distance
-                }, 500);
-            }
+            epg_grid.stop(true, true).animate({
+                scrollLeft: epg_grid_scroll + distance
+            }, 500);
         }
     },
 
