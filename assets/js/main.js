@@ -71,15 +71,14 @@ var components = {
 
             var scroll_top = 0;
             var grid_height = epg_grid.height();
-            var grid_offset_top = epg_grid.offset().top;
-            
+
             $(window).on('scroll', function ()
             {
                 scroll_top = $(window).scrollTop();
 
                 console.log(scroll_top);
 
-                if (scroll_top > grid_height - grid_offset_top)
+                if (scroll_top >= grid_height)
                 {
                     action_prev_icon.css('position', 'relative');
                     action_next_icon.css('position', 'relative');
