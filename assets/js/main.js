@@ -41,9 +41,7 @@ var components = {
             if (typeof epg_start !== 'undefined' && epg_start !== '')
             {
                 // Scroll the grid to the specified starting point
-                epg_grid.stop(true, true).animate({
-                    scrollLeft: epg_start - 120
-                }, 500);
+                scrollEPG(epg_start - 120);
             }
 
             /**
@@ -51,7 +49,9 @@ var components = {
              */
 
             var action_prev = $('[data-action="prev"]', component_epg);
+            var action_prev_icon = $('.icon', action_prev);
             var action_next = $('[data-action="next"]', component_epg);
+            var action_next_icon = $('.icon', action_next);
 
             /* Previous */
             action_prev.on('click', function (e)
@@ -69,16 +69,27 @@ var components = {
                 scrollEPG(240);
             });
 
-            /*
-             * Draggable
-             */
-
-            var draggable = $('[data-draggable="true"]', component_epg);
-
-            if (draggable.length > 0)
+            var scroll_top = 0;
+            var grid_height = epg_grid.height();
+            var grid_offset_top = epg_grid.offset().top;
+            
+            $(window).on('scroll', function ()
             {
-                draggable.kinetic();
-            }
+                scroll_top = $(window).scrollTop();
+
+                console.log(scroll_top);
+
+                if (scroll_top > grid_height - grid_offset_top)
+                {
+                    action_prev_icon.css('position', 'relative');
+                    action_next_icon.css('position', 'relative');
+                }
+                else
+                {
+                    action_prev_icon.css('position', 'fixed');
+                    action_next_icon.css('position', 'fixed');
+                }
+            });
         }
 
         /**
