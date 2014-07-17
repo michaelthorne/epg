@@ -1,4 +1,4 @@
-## Electronic Program Guide &ndash; Prototype
+## Electronic Program Guide
 
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com)
-[![NPM Dependencies](https://david-dm.org/michaelthorne/projecthub.png)](https://david-dm.org)
+[![NPM Dependencies](https://david-dm.org/michaelthorne/epg.png)](https://david-dm.org)
