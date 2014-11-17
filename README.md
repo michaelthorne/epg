@@ -1,3 +1,3 @@
 ## [Electronic Program Guide](http://userx.co.za/work/epg)
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com)
+Prototype created to demonstrate how a web-based TV guide could work.
